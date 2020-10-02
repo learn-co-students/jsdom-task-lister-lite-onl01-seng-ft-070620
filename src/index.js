@@ -11,5 +11,18 @@ const addTask = function(event) {
   const newTask = document.createElement('li');
   newTask.innerHTML = userInput;
   task.appendChild(newTask);
+
+  const button = document.createElement('button');
+  newTask.appendChild(button);
+  button.id = userInput;
+  button.innerHTML = 'x';
+
+  button.addEventListener('click', function(event) {
+    event.preventDefault();
+    newTask.remove();
+  });
+
+  task.appendChild(button)
+
   event.target.reset();
 };
