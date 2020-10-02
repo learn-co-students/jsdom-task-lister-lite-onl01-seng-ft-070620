@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
 const addTask = function(event) {
   event.preventDefault();
-  const task = document.getElementById('tasks');
   const userInput = document.getElementById('new-task-description').value;
   const newTask = document.createElement('li');
+  const task = document.getElementById('tasks');
   newTask.innerHTML = userInput;
   task.appendChild(newTask);
 
@@ -21,8 +21,6 @@ const addTask = function(event) {
     event.preventDefault();
     newTask.remove();
   });
-
-  task.appendChild(button)
 
   event.target.reset();
 };
